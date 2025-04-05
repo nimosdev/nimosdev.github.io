@@ -20,9 +20,10 @@ body {
 }
 
 aside {
-    width: 25%;
+    width: 20%;
+    min-width: 200px;
     padding: 2em;
-    background-color: #e0e0e0;
+    background-color: #f0f0f0;
     border-right: 1px solid #ddd;
     display: flex;
     flex-direction: column;
@@ -32,11 +33,11 @@ aside {
 
 .profile-header {
     text-align: left;
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
 }
 
 .profile-name {
-    font-size: 2.2em;
+    font-size: 2em;
     font-weight: 700;
     color: #444;
     margin-bottom: 0.2em;
@@ -46,21 +47,22 @@ aside {
     font-size: 0.9em;
     color: #777;
     line-height: 1.4;
+    margin-bottom: 1em;
 }
 
 .profile-nav {
     display: flex;
     flex-direction: column;
-    gap: 0.5em;
+    gap: 0.3em;
 }
 
 .nav-link {
     display: block;
-    padding: 0.8em 1em;
+    padding: 0.7em 0.8em;
     background-color: #e8e8e8;
     color: #333;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 4px;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -77,15 +79,15 @@ aside {
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 1em;
-    margin-bottom: 0.5em;
+    gap: 0.8em;
+    margin-bottom: 0.4em;
 }
 
 .social-link {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.2em;
+    font-size: 1.1em;
     color: #007bff;
     text-decoration: none;
     transition: color 0.3s ease;
@@ -96,7 +98,7 @@ aside {
 }
 
 .copyright {
-    font-size: 0.8em;
+    font-size: 0.7em;
     color: #777;
 }
 
@@ -250,6 +252,7 @@ aside.dark-mode {
         width: 100%;
         border-right: none;
         border-bottom: 1px solid #ddd;
+        padding: 1.5em;
     }
 
     main {
@@ -276,5 +279,25 @@ aside.dark-mode {
     .tool.dark-mode img,
     .language.dark-mode img {
         display: none;
+    }
+
+    .profile-name {
+        font-size: 1.8em;
+    }
+
+    .profile-nav {
+        gap: 0.2em;
+    }
+
+    .nav-link {
+        padding: 0.5em 0.6em;
+    }
+
+    .social-links {
+        gap: 0.6em;
+    }
+
+    .social-link {
+        font-size: 1em;
     }
 }
