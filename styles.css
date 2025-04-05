@@ -1,0 +1,280 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f0f0f0;
+    color: #333;
+    display: flex;
+    min-height: 100vh;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 1400px;
+    height: 100vh;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    transition: background-color 0.3s ease;
+}
+
+aside {
+    width: 25%;
+    padding: 2em;
+    background-color: #e0e0e0;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.profile-header {
+    text-align: left;
+    margin-bottom: 1em;
+}
+
+.profile-name {
+    font-size: 2.2em;
+    font-weight: 700;
+    color: #444;
+    margin-bottom: 0.2em;
+}
+
+.profile-description {
+    font-size: 0.9em;
+    color: #777;
+    line-height: 1.4;
+}
+
+.profile-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.nav-link {
+    display: block;
+    padding: 0.8em 1em;
+    background-color: #e8e8e8;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.profile-footer {
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-bottom: 0.5em;
+}
+
+.social-link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: #0056b3;
+}
+
+.copyright {
+    font-size: 0.8em;
+    color: #777;
+}
+
+main {
+    flex: 1;
+    overflow-y: auto;
+    padding: 2em;
+    position: relative;
+}
+
+.page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: translateY(20px);
+}
+
+.page.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+section {
+    margin-bottom: 2em;
+}
+
+h2 {
+    font-size: 2em;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.3em;
+    margin-bottom: 0.8em;
+    color: #444;
+}
+
+.project {
+    margin-bottom: 1.2em;
+    padding-bottom: 0.8em;
+    border-bottom: 1px solid #eee;
+    transition: border-color 0.3s ease;
+}
+
+.content-container {
+    display: flex;
+    align-items: center;
+}
+
+.image-container img {
+    max-width: 200px;
+    margin-left: 2em;
+    border-radius: 10px;
+}
+
+.skills-list,
+.tools-list,
+.languages-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    justify-content: flex-start;
+}
+
+.skill,
+.tool,
+.language {
+    background-color: #e0e0e0;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    min-height: 3em;
+    line-height: 1.5;
+}
+
+.skill img,
+.tool img,
+.language img {
+    max-height: 2em;
+    margin-right: 0.5em;
+}
+
+.theme-toggle {
+    position: absolute;
+    bottom: 2em;
+    right: 2em;
+    padding: 0.8em 1.2em;
+    border: none;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 1em;
+}
+
+.theme-toggle i {
+    margin-right: 0.5em;
+}
+
+body.dark-mode {
+    background: #121212;
+    color: #f0f0f0;
+}
+
+.container.dark-mode {
+    background-color: #202020;
+}
+
+aside.dark-mode {
+    background-color: #282828;
+    border-right-color: #444;
+}
+
+.nav-link.dark-mode {
+    background-color: #282828;
+    color: #f0f0f0;
+}
+
+.nav-link.dark-mode:hover,
+.nav-link.dark-mode.active {
+    background-color: #333;
+    color: #007bff;
+}
+
+.project.dark-mode {
+    border-bottom-color: #444;
+}
+
+.skill.dark-mode,
+.tool.dark-mode,
+.language.dark-mode {
+    background-color: #282828;
+    color: #f0f0f0;
+}
+
+.theme-toggle.dark-mode {
+    background-color: #282828;
+    color: #f0f0f0;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    aside {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+    }
+
+    main {
+        width: 100%;
+    }
+
+    .content-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .image-container img {
+        margin-left: 0;
+        margin-top: 1em;
+    }
+
+    .skill img,
+    .tool img,
+    .language img {
+        display: none;
+    }
+
+    .skill.dark-mode img,
+    .tool.dark-mode img,
+    .language.dark-mode img {
+        display: none;
+    }
+}
